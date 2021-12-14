@@ -9,7 +9,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
   font-size: ${RFValue(18)}px;
   background-color: ${({ theme }) => theme.colors.shape};
   color: ${({ theme }) => theme.colors.text_dark};
-  border-radius: 5px;
+  border-radius: 4px;
 
   margin-bottom: 8px;
   font-family: ${({ theme }) => theme.fonts.regular};

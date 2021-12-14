@@ -12,6 +12,10 @@ import {
 import AppLoading from "expo-app-loading";
 import { Register } from "./src/screens/Register";
 import { CategorySelect } from "./src/screens/CategorySelct";
+import { NavigationContainer } from "@react-navigation/native";
+import { AppRoutes } from "./src/routes/app.routes";
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,13 +25,16 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />
+    return <AppLoading />;
   }
   return (
     <ThemeProvider theme={theme}>
-      {/* <Dashboard /> */}
-      <Register />
-      {/* <CategorySelect /> */}
+      <NavigationContainer>
+        {/* <Dashboard /> */}
+        {/* <Register /> */}
+        {/* <CategorySelect /> */}
+        <AppRoutes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
