@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 import { ThemeProvider } from "styled-components";
 import { Dashboard } from "./src/screens/Dashboard";
 import theme from "./src/global/styles/theme";
@@ -30,6 +30,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
+        <StatusBar barStyle="light-content" />
         {/* <Dashboard /> */}
         {/* <Register /> */}
         {/* <CategorySelect /> */}
