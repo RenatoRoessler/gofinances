@@ -16,6 +16,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { AppRoutes } from "./src/routes/app.routes";
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
+import { SignIn } from "./src/screens/SignIn";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -34,7 +35,8 @@ export default function App() {
         {/* <Dashboard /> */}
         {/* <Register /> */}
         {/* <CategorySelect /> */}
-        <AppRoutes />
+        <SignIn />
+        {/* <AppRoutes /> */}
       </NavigationContainer>
     </ThemeProvider>
   );
