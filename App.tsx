@@ -14,9 +14,10 @@ import { Register } from "./src/screens/Register";
 import { CategorySelect } from "./src/screens/CategorySelct";
 import { NavigationContainer } from "@react-navigation/native";
 import { AppRoutes } from "./src/routes/app.routes";
-import 'intl';
-import 'intl/locale-data/jsonp/pt-BR';
+import "intl";
+import "intl/locale-data/jsonp/pt-BR";
 import { SignIn } from "./src/screens/SignIn";
+import { AuthProvider } from "./src/hooks/auth";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -35,7 +36,9 @@ export default function App() {
         {/* <Dashboard /> */}
         {/* <Register /> */}
         {/* <CategorySelect /> */}
-        <SignIn />
+        <AuthProvider>
+          <SignIn />
+        </AuthProvider>
         {/* <AppRoutes /> */}
       </NavigationContainer>
     </ThemeProvider>

@@ -1,19 +1,22 @@
-import React from "react";
-import {
-  Container,
-  Header,
-  TitleWrapper,
-  Title,
-  SignInTitle,
-  Footer,
-} from "./styles";
-
+import React, { useContext } from "react";
+import { RFValue } from "react-native-responsive-fontsize";
 import AppleSvg from "../../assets/apple.svg";
 import GoogleSvg from "../../assets/google.svg";
 import LogoSvg from "../../assets/logo.svg";
-import { RFValue } from "react-native-responsive-fontsize";
+import { useAuth } from "../../hooks/auth";
+import { SignInSocialButton } from "../../components/SignInSocialButton";
+import {
+  Container,
+  Footer,
+  FooterWrapper,
+  Header,
+  SignInTitle,
+  Title,
+  TitleWrapper
+} from "./styles";
 
 export function SignIn() {
+  const {user} = useAuth();
   return (
     <Container>
       <Header>
@@ -27,7 +30,12 @@ export function SignIn() {
           Faça seu login com {"\n"}uma das contas abaixo
         </SignInTitle>
       </Header>
-      <Footer></Footer>
+      <Footer>
+        <FooterWrapper>
+          <SignInSocialButton title="Entrar com Google" svg={GoogleSvg} />
+          <SignInSocialButton title="Entrar com Apple" svg={AppleSvg} />
+        </FooterWrapper>
+      </Footer>
     </Container>
   );
 }
